@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Query Selector</title>
+  </head>
+  <style>
+    .green-color {
+      color: green;
+    }
+  </style>
+  <body>
+    <nav class="block">
+      <p class="paragraph">Welcom to my website</p>
+    </nav>
+    <div class="block">
+      <h4 id="name-block">
+        Hey there my name is <span id="username">Sonam</span>
+      </h4>
+      <p class="paragraph">Here is the code</p>
+      <pre><code>console.log("hey there")</code></pre>
+    </div>
+    <div>
+      <div>
+        <h1>This is div 2</h1>
+      </div>
+    </div>
+    <div id="container"></div>
+    <button id="clickBtn">Click me</button>
+    <script>
+      // query selector - only works with ist element
+      /*
+      selectors
+      - tag name
+      - id #
+      - class .
+       */
+
+      //   const body = document.querySelector("body");
+      //   console.log(body);
+      //   body.innerHTML = "<h1>Hacked!!</h1>";
+
+      //   const div = document.querySelector("div");
+      //   console.log(div);
+      //   div.innerHTML = "<h1>This is hcked!!</h1>";
+
+      //   const username = document.querySelector("#username");
+      //   console.log(username.innerText);
+      //   username.innerText = "PradeepSonam";
+
+      // 2nd way
+      //   const el = document.getElementById("username"); //by id
+      //   console.log(el.innerText);
+      //   el.innerText = "PradeepSonam";
+      //   el.classList.add("green-color");
+
+      //   const classElemnt = document.getElementsByClassName("block"); //by class
+
+      // ----------------- event listners -----------
+
+      const el = document.getElementById("clickBtn");
+      const nameblock = document.getElementById("name-block");
+
+      //   el.addEventListener("click", () => {
+      //     // console.log("i am clicked");
+      //     // nameblock.style.color = "green";
+
+      //     if (nameblock.style.color === "green") {
+      //       nameblock.style.color = "purple";
+      //     } else {
+      //       nameblock.style.color = "green";
+      //     }
+      //   });
+
+      // ---------- create dynamic elements in DOM
+      const button = document.getElementById("clickBtn");
+      const conatiner = document.getElementById("container");
+
+      button.addEventListener("click", () => {
+        const el = document.createElement("h1");
+        el.innerText = "SonamPradeep";
+        conatiner.appendChild(el);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+1.DOM - Document Object Model is a way for JS to access and manipulate HTML.
+
+Simplle Definition
+DOM = JavaScript representation of your HTML page
+
+2. EXAMPLE HTML
+<html>
+  <body>
+    <h1>Hello</h1>
+    <p>Welcome</p>
+  </body>
+</html>
+
+3.DOM Structure (Tree)
+Browser converts HTML into a tree structure:
+
+Document
+└── html
+└── body
+├── h1 ("Hello")
+└── p ("Welcome")
+
+This is called DOM Strutcture
+
+4. why DOM is nneded -
+   without DOM : JavaScript cannot change HTML ❌
+   with DOM: JavaScript can change content, style, structure ✅
+
+5. How JS uses DOM
+JS can:
+Select elements
+Change text
+Change styles
+Add/remove elements
+Handle events (click, input)
+
+6. Selecting Elments : By ID
+const el = document.getElementById("title");
+
+BY Class: const els = document.getElementsByClassName("box");
+
+Modern Way (VERY IMP)
+const el = document.querySelector(".box");
+const all = document.querySelectorAll(".box");
+
+7. Changing Content:
+el.textContent = "New Text";
+
+8. Chnaging Style: 
+el.style.color = "red";
+
+9. Adding elements:
+const newEl = document.createElement("p")
+newEl.textContent = "Hello"
+document.body.appendChild(newEl)
+
+10. Removing Elemnts:  
+el.remove();
+
+11. Evets (Very Imp)
+
+el.addEventListener("click",()=>{
+  console.log("clikced")
+});
+
+12. Real flow step by step
+
+Step 1
+Browser loads HTML
+
+Step 2
+Creates DOM Tree
+
+Step 3
+JavaScript accesses DOM
+
+Step 4
+You manipulate elements
+
+Real EXAMPLE
+
+HTML
+<h1 id="title">Hello</h1>
+<button id="btn">Click</button>
+
+JS
+const title = document.getElementById("title")
+const btn = document.getElementById("btn")
+
+btn.addEventListener("click",()=>{
+  title.textContent ="changed!"
+})
+👉 Click button → text changes
+
+⚠️ Important Concepts
+1. DOM is not HTML 
+
+HTML → static code  
+DOM → live object (can change)
+
+2. DOM is a tree
+
+Everything is:
+node
+element
+text
+
+3. document is root:
+document - 👉 starting point of DOM
+
+
+Common DOM Methods
+
+| Method           | Use          |
+| ---------------- | ------------ |
+| getElementById   | select by id |
+| querySelector    | first match  |
+| querySelectorAll | all matches  |
+| createElement    | create node  |
+| appendChild      | add node     |
+| remove           | delete node  |
+
+
+Simple Analogy
+HTML = structure of house
+DOM = control panel to change house
+JavaScript = person controlling it
+
+
+Why DOM is important?
+Build interactive websites
+Handle user actions
+Update UI dynamically
+Required for React, Angular, etc.
