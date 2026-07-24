@@ -45,7 +45,7 @@ name = "simi";
 
 const obj = { name: "Sonam" };
 
-obj.name = "Rahul"; // ✅ allowed
+obj.name = "www"; // ✅ allowed
 // why? const prevents reassignment, NOT mutation  | Mutation means changing the internal data of an object or array
 // Mutation means changing the internal data of an object or array
 // 👉 Here:

@@ -14,7 +14,7 @@ function outer() {
     count++;
     console.log(count);
   }
-  return inner;
+  return inner; 
 }
 const fn = outer();
 
